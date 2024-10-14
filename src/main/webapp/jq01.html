@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq01</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous">
+  </script>
+</head>
+<body>
+	<p>message: studying jquery</p>
+	<button>remove message</button>
+
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("p").hide();
+			});
+		});
+
+	</script>
+</body>
+
+</html>

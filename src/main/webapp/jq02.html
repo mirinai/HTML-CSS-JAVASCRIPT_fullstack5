@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq02</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous">
+  </script>
+  <script>
+  	$(document).ready(function(){
+  		$("button.hide").click(()=>{
+  			$('p').hide();
+  		});
+  		$("button.show").click(()=>{
+  			$('p').show();
+  		});
+  	});
+  </script>
+</head>
+<body>
+	<p>버튼을 눌러서 숨기고 보이는 jquery 이벤트</p>
+	<button class="hide">메시지 숨기기</button>
+	<button class="show">메시지 보이기</button>
+</body>
+</html>
