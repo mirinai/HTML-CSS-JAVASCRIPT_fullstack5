@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq06_mouse_up_down</title>
+<!-- 최신 jQuery 라이브러리 로드 -->
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+	crossorigin="anonymous"></script>
+
+</script>
+<style>
+/* .out 클래스에 대한 스타일 설정 */
+div.out {
+	width: 200px; /* 너비 200px */
+	height: 100px; /* 높이 100px */
+	border: 1px solid #000000; /* 검은색 실선 테두리 */
+	text-align: center; /* 텍스트 중앙 정렬 */
+	background-color: yellow; /* 배경색 노란색 */
+}
+</style>
+</head>
+<body>
+	<div class="out">
+		<p>마우스 이벤트 알아보기</p>
+		<!-- 첫 번째 단락: 이벤트 설명 -->
+		<p>0</p>
+		<!-- 두 번째 단락: 카운트 표시 -->
+	</div>
+	<!--     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> jQuery 라이브러리 로드 -->
+	<script>
+		let n = 0; // 카운트 변수 초기화
+
+		// 마우스가 div.out 위로 들어왔을 때 실행되는 함수
+		$("div.out").mouseenter(function() {
+			$("p:first", this).text("마우스 포인터 들어옴"); // 첫 번째 단락 텍스트 변경
+			$("p:last", this).text(++n); // 두 번째 단락에 카운트 증가 후 표시
+		});
+
+		// 마우스가 div.out에서 나갔을 때 실행되는 함수
+		$("div.out").mouseleave(function() {
+			$("p:first", this).text("마우스 포인터 나감"); // 첫 번째 단락 텍스트 변경
+			$("p:last", this).text("last num: " + n); // 두 번째 단락에 현재 카운트 표시
+		});
+
+		// 마우스 버튼이 div.out 위에서 눌렸을 때 실행되는 함수
+		$("div.out").mousedown(function() {
+			$("p:first", this).hide(); // 첫 번째 단락 숨기기
+			$("p:last", this).text("메시지 사라짐"); // 두 번째 단락 텍스트 변경
+		});
+
+		// 마우스 버튼이 div.out 위에서 놓였을 때 실행되는 함수
+		$("div.out").mouseup(function() {
+			$("p:first", this).show(); // 첫 번째 단락 다시 표시
+			$("p:last", this).text("num: " + n); // 두 번째 단락에 현재 카운트 표시
+		});
+	</script>
+</body>
+</html>
